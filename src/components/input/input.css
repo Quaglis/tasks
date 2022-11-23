@@ -1,0 +1,27 @@
+.input {
+    margin: 0.5rem;
+    width: 22rem;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    width: 15rem;
+}
+
+input, textarea, button {
+    padding: 0.2rem;
+    margin: 0.2rem;
+    border-radius: 0.2rem;
+    border: 1px solid black;
+}
+
+textarea {
+    resize: none;
+    height: 5rem;
+    width: 15rem;
+}
