@@ -12,7 +12,7 @@ import '../../typedef';
  * @param {function(Task): void} props.updateTask
  * @param {function(string, string): void} props.deleteFile
  */
-function UdateTaskPanel({task, setTask, isOpen, setIsOpen, updateTask, deleteFile}) {
+function UpdateTaskPanel({task, setTask, isOpen, setIsOpen, updateTask, deleteFile}) {
     
     const [disabled, setDisabled] = useState(false);
 
@@ -72,4 +72,4 @@ function UdateTaskPanel({task, setTask, isOpen, setIsOpen, updateTask, deleteFil
     )
 }
 
-export default UdateTaskPanel;
+export default UpdateTaskPanel;

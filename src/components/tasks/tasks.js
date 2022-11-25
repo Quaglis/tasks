@@ -1,5 +1,5 @@
 import './tasks.css';
-import Task from './task/task';
+import TaskBlock from './task-block/task-block';
 
 import '../../typedef';
 
@@ -16,7 +16,7 @@ function Tasks({tasks, markAsDone, deleteTask, downloadFile, openTask}) {
         <div className='tasks'>
             <h2>Задачи</h2>
             {tasks.map((task, key) => (
-                <Task key={key}
+                <TaskBlock key={key}
                     task={task}
                     markAsDone={markAsDone}
                     deleteTask={deleteTask}

@@ -2,7 +2,7 @@ import {useState} from 'react';
 import './App.css';
 import Input from './components/input/input';
 import Tasks from './components/tasks/tasks';
-import UdateTaskPanel from './components/update-panel/update-task-panel';
+import UpdateTaskPanel from './components/update-panel/update-task-panel';
 import useDatabase from './useDatabase';
 
 import './typedef';
@@ -14,7 +14,7 @@ function App() {
         const [task, setTask] = useState({});
 
         /**
-         * Отправляет задачю в блок изменения.
+         * Отправляет задачу в блок изменения.
          * @param {Task} task - Задача для изменения.
          */
         function openTask(task) {
@@ -26,7 +26,7 @@ function App() {
         <div className="App">
             <div>
                 <Input addTask={db.addTask}/>
-                <UdateTaskPanel
+                <UpdateTaskPanel
                     task={task}
                     setTask={setTask}
                     isOpen={isOpen}
@@ -38,7 +38,7 @@ function App() {
             <Tasks
                 tasks={db.tasks} 
                 markAsDone={db.markAsDone}
-                deleteTask={db.daleteTask}
+                deleteTask={db.deleteTask}
                 downloadFile={db.downloadFile}
                 openTask={openTask}
             />

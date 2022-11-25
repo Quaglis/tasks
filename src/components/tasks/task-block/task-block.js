@@ -1,4 +1,4 @@
-import './task.css';
+import './task-block.css';
 import dayjs from "dayjs";
 import 'dayjs/locale/ru';
 
@@ -8,13 +8,13 @@ dayjs.locale('ru');
 
 /**
  * @param {Object} props
- * @param {Task[]} props.tasks
+ * @param {Task} props.task
  * @param {function(string, boolean): void} props.markAsDone
  * @param {function(string): void} props.deleteTask
  * @param {function(string, string): void} props.downloadFile
  * @param {function(Task): void} props.openTask
  */
-function Task({task, markAsDone, deleteTask, downloadFile, openTask}) {
+function TaskBlock({task, markAsDone, deleteTask, downloadFile, openTask}) {
     return (
         <div className="task">
             <header>
@@ -44,4 +44,4 @@ function Task({task, markAsDone, deleteTask, downloadFile, openTask}) {
     )
 }
 
-export default Task;
+export default TaskBlock;

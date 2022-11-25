@@ -5,8 +5,6 @@ import {v4 as uuidv4} from 'uuid';
 
 import './typedef';
 
-/** @module useDatabase */
-
 /**
  * Хук для управления БД.
  * @return {{
@@ -14,7 +12,7 @@ import './typedef';
  *      addTask: addTask,
  *      markAsDone: markAsDone,
  *      updateTask: updateTask,
- *      daleteTask: daleteTask,
+ *      deleteTask: deleteTask,
  *      uploadFile: uploadFile,
  *      downloadFile: downloadFile,
  *      deleteFile: deleteFile
@@ -43,7 +41,7 @@ function useDatabase() {
     
     /**
      * Добавляет новую задачу в БД.
-     * @param {Task} data - Данные, в виде задачи (id не будет учтён, маркер isDone установится в false).
+     * @param {Task} data - Данные, в виде задачи (маркер isDone установится в false).
      */
     function addTask(data) {
         let task = { ...data, isDone: false};
@@ -100,7 +98,7 @@ function useDatabase() {
      * Удаляет задачу из БД.
      * @param {string} taskId - Идентификатор задачи.
      */
-    function daleteTask(taskId) {
+    function deleteTask(taskId) {
         let index = tasks.findIndex(item => item.id === taskId);
         if (tasks[index].file)
             deleteFile(tasks[index].file.id);
@@ -123,7 +121,7 @@ function useDatabase() {
     /**
      * Скачивает файл из БД.
      * @param {string} fileId - Идентификатор файла.
-     * @param {string} name - Название для скачеваемого файла (не влияет на загрузку).
+     * @param {string} name - Название для скачиваемого файла (не влияет на загрузку).
      */
     function downloadFile(fileId, name) {
         get(ref(database, `/files/${fileId}`)).then(snapshot => {
@@ -151,7 +149,7 @@ function useDatabase() {
         addTask,
         markAsDone,
         updateTask,
-        daleteTask,
+        deleteTask,
         uploadFile,
         downloadFile,
         deleteFile
